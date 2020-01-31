@@ -9,11 +9,11 @@ const FlickrPhoto = ({ src, title, media, description, tags, author }) =>
   </div>
 
 {
-  /* 
+/* 
+  NB: description, author and tags have been omitted as the search API does not return any of these.
+  - see notes in readme
   
-  see notes in readme
-  
-  <i>by {author}</i>
+<i>by {author}</i>
 <p dangerouslySetInnerHTML={{ __html: description }} ></p>
 <h2>Tags:</h2>
 {tags} 
