@@ -26,7 +26,10 @@ width:'100%',
       bottom: '0',
       left:0,
       padding:'20px',
-      boxSizing:'border-box'
+      boxSizing:'border-box',
+      wordWrap: 'break-word',
+overflowWrap: 'break-word',
+wordBreak: 'break-all'
           }}>
       {title}
     </div>

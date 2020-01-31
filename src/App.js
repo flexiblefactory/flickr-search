@@ -3,7 +3,7 @@ import './App.css';
 import FlickrPhoto from './FlickrPhoto';
 import FlickrAPI from './FlickrAPI';
 import { observer } from 'mobx-react'
-
+import Spinner from  'react-spinkit'
 const api = new FlickrAPI()
 
 const onScroll = () => {
@@ -46,8 +46,14 @@ const App = () => {
         </form>
       </header>
       <div className="content-pane">
-        {api.photos.map((p, i) => <FlickrPhoto key={i} {...p}></FlickrPhoto>)}
+      {api.photos.map((p, i) => <FlickrPhoto key={i} {...p}></FlickrPhoto>)} 
+      <div style={{visibility: api.pending?'visible':'hidden'}} className='loading'>
+        
+        <Spinner fadeIn='none' name='3-bounce' color='hotpink'/>
+        </div>
+           
       </div>
+      
     </div>
   );
 }

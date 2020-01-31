@@ -32,17 +32,24 @@
 }
 .content-pane {
   padding-top: 135px;
+  overflow: hidden;
 }
 
 html, body{
   overflow-x: hidden;
+  
 }
-  .search {
-    padding: 10px;
-    width: 150px;
-    font-size: 16px;
-    color: white;
-    background-color: hotpink;
-    border: none;
-    margin: 10px;
-  }
+.search {
+  padding: 10px;
+  width: 150px;
+  font-size: 16px;
+  color: white;
+  background-color: hotpink;
+  border: none;
+  margin: 10px;
+}
+
+.loading {
+  margin:20px
+}
+/*  */

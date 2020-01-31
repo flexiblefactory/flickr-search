@@ -8,9 +8,10 @@ const toUrl = ({ farm, server, id, secret }) =>
 
 class FlickrAPI {
   photos = []
-  query = 'trees'
+  query = ''
   page = 0
   pageSize = 12
+  pending = false
   search(query) {
     this.query = query
     this.page = 0
@@ -19,14 +20,16 @@ class FlickrAPI {
   }
   async getNextPage() {
     this.page++
+    this.pending=true
     const result = await flickr.photos.search({
       safe_search: 1,
       tags: this.query.split(' ').join(','),
       per_page: this.pageSize,
       page: this.page
     })
+    this.pending=false
     const response = JSON.parse(result.text)
     this.photos = [...this.photos, ...response.photos.photo.map(p => ({ ...p, src: toUrl(p) }))]
   }
 }
-export default decorate(FlickrAPI, { photos: observable, query: observable })
+export default decorate(FlickrAPI, { photos: observable, query: observable, pending: observable })
