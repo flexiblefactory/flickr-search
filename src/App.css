@@ -34,7 +34,9 @@
   padding-top: 135px;
 }
 
-
+html, body{
+  overflow-x: hidden;
+}
   .search {
     padding: 10px;
     width: 150px;

@@ -8,8 +8,12 @@ const api = new FlickrAPI()
 
 const onScroll = () => {
   const e = document.getElementsByTagName('html')[0];
-  const diff = Math.floor(Math.abs(e.scrollHeight - e.scrollTop - e.clientHeight))
+
+  var scrollY = window.pageYOffset;
+
+  const diff = Math.floor(Math.abs(e.scrollHeight - scrollY - e.clientHeight))
   const atBottom = diff === 0
+  console.log(diff, atBottom)
   if (atBottom) {
     api.getNextPage()
   }
@@ -31,6 +35,7 @@ const App = () => {
         <form onSubmit={(e) => {
           e.preventDefault()
           api.search(query);
+          window.scrollTo(0,0)
         }}>
           <input style={{ width: '144px' }} type="text" value={query} onChange={e => setQuery(e.target.value)} />
           <div>
