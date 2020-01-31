@@ -1,5 +1,15 @@
 Demo is here [http://flexiblefactory.co.uk/flickr-search/](http://flexiblefactory.co.uk/flickr-search/)
 
+NB: description, author, tags have been omitted as the search API does not return any of these.
+
+The 'feed' does, but doesn't support paging, and also does not include the `Access-Control-Allow-Origin` response header.
+
+from [https://stackoverflow.com/a/42887045/617027](https://stackoverflow.com/a/42887045/617027) 
+
+But http://api.flickr.com/services/feeds/photos_public.gne" isn’t actually intended to be used with the Fetch API or XHR, so the response it sends back doesn’t include the `Access-Control-Allow-Origin` response header.
+
+Per the CORS protocol, to a browser the lack of that Access-Control-Allow-Origin response header means “Don’t expose this response to any client-side JavaScript running in a web app”.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
