@@ -50,6 +50,35 @@ html, body{
 }
 
 .loading {
-  margin:20px
+  margin:20px;
 }
-/*  */
+
+.flickr-photo{
+  display: inline-table;
+  background-color: black;
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.title-box{
+  display: inline-table;
+  background-color: rgba(0,0,0,.5);
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
