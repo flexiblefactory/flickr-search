@@ -13,7 +13,7 @@ const onScroll = () => {
 
   const diff = Math.floor(Math.abs(e.scrollHeight - scrollY - e.clientHeight))
   const atBottom = diff === 0
-  console.log(diff, atBottom)
+  //console.log(diff, atBottom)
   if (atBottom) {
     api.getNextPage()
   }
@@ -46,7 +46,12 @@ const App = () => {
         </form>
       </header>
       <div className="content-pane">
-      {api.photos.map((p, i) => <FlickrPhoto key={i} {...p}></FlickrPhoto>)} 
+      {api.photos.map((p, i) => <FlickrPhoto selectTag={(tag)=>{
+        //api.getProfile(p.owner)
+        //api.getPhotoInfo(p)
+        setQuery(tag)
+        api.search(tag)
+      }} key={i} {...p}></FlickrPhoto>)} 
       <div style={{visibility: api.pending?'visible':'hidden'}} className='loading'>
         
         <Spinner fadeIn='none' name='3-bounce' color='hotpink'/>

@@ -1,24 +1,22 @@
 import React from 'react';
 import { observer } from 'mobx-react'
 
-const FlickrPhoto = ({ src, title, media, description, tags, author }) =>
-  <div className='flickr-photo' style={{ backgroundImage: `url(${src})` }}>
+const Tag = ({ tag, selectTag }) => <><a className='tag' onClick={() => selectTag(tag)} key={tag} href='#'>{tag}</a> </>
+
+const TagList = ({ tags, selectTag }) =>
+  <div className='tags'>{tags.split(' ').map(t => <Tag selectTag={selectTag} key={t} tag={t}></Tag>)}</div>
+
+const FlickrPhoto = ({ id, selectTag, src, title, description, tags, owner, ownername }) =>
+  <div className='flickr-photo'>
+    <div className='flickr-image' style={{ backgroundImage: `url(${src})` }}></div>
     <div className='title-box'>
-      {title}
+      <a target='flickr-photo' href={`https://www.flickr.com/photos/${owner}/${id}`}>{title || 'Untitled'}</a>
+      <br />by<br />
+      <a target='flickr-profile' href={`https://www.flickr.com/people/${owner}/`}>{ownername}</a>
+
+      <p className="description">{description._content}</p>
+      <TagList selectTag={selectTag} tags={tags}></TagList>
+
     </div>
   </div>
-
-{
-/* 
-  NB: description, author and tags have been omitted as the search API does not return any of these.
-  - see notes in readme
-  
-<i>by {author}</i>
-<p dangerouslySetInnerHTML={{ __html: description }} ></p>
-<h2>Tags:</h2>
-{tags} 
-
-*/
-}
-
 export default observer(FlickrPhoto)

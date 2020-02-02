@@ -55,30 +55,61 @@ html, body{
 
 .flickr-photo{
   display: inline-table;
-  background-color: black;
-  width: 500px;
-  height: 500px;
-  max-width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   color: white;
-  position: relative;
   box-sizing: border-box;
   margin-bottom: 20px;
   margin-right: 20px;
 }
+.flickr-image {
+  width: 500px;
+  height: 500px;
+}
 
-.title-box{
-  display: inline-table;
-  background-color: rgba(0,0,0,.5);
+.flickr-image, .detail-pane{
   max-width: 100%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: black;
+}
+.tags{
+  max-width: 100%;
+  box-sizing: border-box;
+
+}
+.title-box{
+  width: 500px;
+  max-width: 100%;
+/*   display: inline-table;
+ */  background-color: rgba(0,0,0,.5);
+  max-width: 100%;
+/*   position: absolute;
+ bottom: 0;*/  
   left: 0;
   padding: 20px;
   box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.tag{
+  border-radius: 5px;
+  font-size: 8px;
+  padding: 4px;
+  margin: -2px;
+  background-color:
+  #282828;
+}
+
+.description{
+  color: rgb(200,200,200);
+  font-size: 12px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(200,200,200)
 }
