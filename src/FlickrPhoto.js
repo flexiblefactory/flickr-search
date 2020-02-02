@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react'
 
-const Tag = ({ tag, selectTag }) => <><a className='tag' onClick={() => selectTag(tag)} key={tag} href='#'>{tag}</a> </>
+const Tag = ({ tag, selectTag }) => <><a className='tag' onClick={() => selectTag(tag)} key={tag} href='javascript:'>{tag}</a> </>
 
 const TagList = ({ tags, selectTag }) =>
   <div className='tags'>{tags.split(' ').map(t => <Tag selectTag={selectTag} key={t} tag={t}></Tag>)}</div>
