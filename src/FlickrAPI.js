@@ -1,5 +1,5 @@
 import Flickr from 'flickr-sdk'
-import { decorate, computed, observable } from 'mobx'
+import { decorate, observable } from 'mobx'
 
 const FLICKR_API_KEY = 'd5b502cd8d28ab103b7048c244cf3f56';
 const flickr = new Flickr(FLICKR_API_KEY);
