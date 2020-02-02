@@ -48,6 +48,7 @@ class FlickrAPI {
     const result = await flickr.photos.search({
       safe_search: 1,
       tags: this.query.split(' ').join(','),
+      tag_mode: 'all',
       per_page: this.pageSize,
       page: this.page,
       extras:'description,tags,owner_name'

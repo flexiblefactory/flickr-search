@@ -10,8 +10,8 @@ const FlickrPhoto = ({ id, selectTag, src, title, description, tags, owner, owne
   <div className='flickr-photo'>
     <div className='flickr-image' style={{ backgroundImage: `url(${src})` }}></div>
     <div className='title-box'>
-      <a target='flickr-photo' href={`https://www.flickr.com/photos/${owner}/${id}`}>{title || 'Untitled'}</a>
-      <br />by<br />
+      <a className="title" target='flickr-photo' href={`https://www.flickr.com/photos/${owner}/${id}`}>{title || 'Untitled'}</a>
+      <br /><span className="by">by</span><br />
       <a target='flickr-profile' href={`https://www.flickr.com/people/${owner}/`}>{ownername}</a>
 
       <p className="description">{description._content}</p>
